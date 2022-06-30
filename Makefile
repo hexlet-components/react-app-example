@@ -6,3 +6,6 @@ start-backend:
 
 start:
 	make start-backend & make start-frontend
+
+deploy:
+	git push heroku main
