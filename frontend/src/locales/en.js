@@ -34,7 +34,7 @@ export default {
     },
     private: {
       header: 'Private page!',
-      message: 'Logged user: {{username}}'
+      message: 'Logged user: {{username}}',
     },
   },
 };
