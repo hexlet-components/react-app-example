@@ -34,7 +34,7 @@ export default {
     },
     private: {
       header: 'Скрытая страница!',
-      message: 'Авторизован пользователь: {{username}}'
-    }
+      message: 'Авторизован пользователь: {{username}}',
+    },
   },
 };
