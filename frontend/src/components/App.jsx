@@ -20,6 +20,7 @@ import { AuthContext } from '../contexts/index.js';
 import { useAuth } from '../hooks/index.js';
 import routes from '../routes.js';
 
+//  eslint-disable-next-line
 const AuthProvider = ({ children }) => {
   const currentUser = JSON.parse(localStorage.getItem('user'));
   const [user, setUser] = useState(currentUser ? { username: currentUser.username } : null);
