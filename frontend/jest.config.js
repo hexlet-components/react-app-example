@@ -1,0 +1,1 @@
+['<rootDir>/setupTests.js'];
