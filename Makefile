@@ -12,3 +12,7 @@ deploy:
 
 lint-frontend:
 	make -C frontend lint
+
+test:
+	cd /frontend/playwright
+	npx playwright test
