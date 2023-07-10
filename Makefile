@@ -16,3 +16,6 @@ lint-frontend:
 test:
 	cd /frontend/playwright
 	npx playwright test
+
+install:
+	npm ci
