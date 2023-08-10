@@ -14,8 +14,9 @@ lint-frontend:
 	make -C frontend lint
 
 test:
-	cd /frontend/playwright
-	npx playwright test
+	make start
+	make -C frontend test 
+	
 
 install:
 	npm ci
