@@ -14,7 +14,7 @@ lint-frontend:
 	make -C frontend lint
 
 build:
-	npm run build
+	DISABLE_ESLINT_PLUGIN=true npm run build
 
 test:
 	npx playwright test
