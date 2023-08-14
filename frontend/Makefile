@@ -10,3 +10,5 @@ build:
 lint:
 	npx eslint .
 
+test: 
+	make -C playwright test

@@ -13,5 +13,11 @@ deploy:
 lint-frontend:
 	make -C frontend lint
 
+build:
+	DISABLE_ESLINT_PLUGIN=true npm run build
+
+test:
+	npx playwright test
+
 install:
-	make -C frontend install
+	npm ci
