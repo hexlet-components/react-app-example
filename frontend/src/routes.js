@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 // @ts-check
 
 const apiPath = '/api/v1';
