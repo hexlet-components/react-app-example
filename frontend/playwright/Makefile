@@ -1,2 +1,0 @@
-test:
-	npx playwright test

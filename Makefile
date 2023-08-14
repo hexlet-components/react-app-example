@@ -13,10 +13,11 @@ deploy:
 lint-frontend:
 	make -C frontend lint
 
+build:
+	npm run build
+
 test:
-	make start
-	make -C frontend test 
-	
+	npx playwright test
 
 install:
 	npm ci

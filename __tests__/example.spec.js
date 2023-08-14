@@ -3,7 +3,7 @@
 const { test, expect } = require('@playwright/test');
 
 test('wrong login', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
+  await page.goto('http://localhost:5001/');
 
   expect(page.getByText(/Нет аккаунта?/)).toBeVisible();
   expect(page.getByAltText(/Войти/)).toBeVisible();
@@ -18,7 +18,7 @@ test('wrong login', async ({ page }) => {
 });
 
 test('registration page, success login', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
+  await page.goto('http://localhost:5001/');
 
   await page.getByText(/Регистрация/).click();
   expect(page.getByLabel(/Имя пользователя/)).toBeVisible();
