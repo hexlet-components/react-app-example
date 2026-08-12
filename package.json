@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build --prefix frontend",
+    "build": "pnpm -C frontend run build",
     "start": "start-server -s ./frontend/build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "cd frontend && npm ci"
+    "lint": "oxlint --config=.oxlintrc.json .",
+    "lint:fix": "oxfmt --ignore-path=.oxfmtignore . && oxlint --config=.oxlintrc.json --fix .",
+    "format": "oxfmt --ignore-path=.oxfmtignore .",
+    "format:check": "oxfmt --ignore-path=.oxfmtignore --check ."
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +18,10 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
     "playwright": "^1.37.0"
-  }
+  },
+  "packageManager": "pnpm@11.20.0",
+  "private": true
 }

@@ -2,7 +2,7 @@ start-frontend:
 	make -C frontend start
 
 start-backend:
-	npx start-server
+	pnpm exec start-server
 
 start:
 	make start-backend & make start-frontend
@@ -14,10 +14,12 @@ lint-frontend:
 	make -C frontend lint
 
 build:
-	DISABLE_ESLINT_PLUGIN=true npm run build
+	DISABLE_ESLINT_PLUGIN=true pnpm run build
 
-test:
-	npx playwright test
 
 install:
-	npm ci
+	pnpm install --frozen-lockfile
+
+lint:
+	pnpm --silent run lint
+	pnpm --silent run format:check
