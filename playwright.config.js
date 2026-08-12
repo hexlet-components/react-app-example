@@ -5,21 +5,21 @@
 const config = {
   workers: 5,
   maxFailures: 1,
-  testDir: './__tests__',
-  outputDir: './tmp/artifacts',
+  testDir: "./__tests__",
+  outputDir: "./tmp/artifacts",
   use: {
-    baseURL: 'http://localhost:5000',
-    browserName: 'chromium',
+    baseURL: "http://localhost:5000",
+    browserName: "chromium",
     headless: true,
-    screenshot: 'only-on-failure',
-    locale: 'ru-RU',
+    screenshot: "only-on-failure",
+    locale: "ru-RU",
     launchOptions: {
       slowMo: 100,
     },
   },
   webServer: {
-    command: 'npm start',
-    url: 'http://localhost:5001',
+    command: "npm start",
+    url: "http://localhost:5001",
   },
   // timeout: 30000,
 };
