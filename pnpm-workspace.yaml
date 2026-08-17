@@ -13,5 +13,8 @@ packages:
 # котором YAML перестаёт разбираться.
 allowBuilds:
   '@parcel/watcher': true
+  # @swc/core приезжает зависимостью i18next-cli, его postinstall только
+  # проверяет нативный биндинг: ни установке, ни сборке он не нужен.
+  '@swc/core': false
   core-js: true
   core-js-pure: true

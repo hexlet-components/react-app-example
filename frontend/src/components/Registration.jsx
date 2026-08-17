@@ -84,16 +84,20 @@ const Registration = () => {
           <div className="card shadow-sm">
             <div className="card-body d-flex flex-column flex-md-row justify-content-around align-items-center p-5">
               <div>
-                <img src={avatarImages} className="rounded-circle" alt={t("signup.header")} />
+                <img
+                  src={avatarImages}
+                  className="rounded-circle"
+                  alt={t(($) => $.signup.header)}
+                />
               </div>
               <Form onSubmit={formik.handleSubmit} className="w-50">
-                <h1 className="text-center mb-4">{t("signup.header")}</h1>
+                <h1 className="text-center mb-4">{t(($) => $.signup.header)}</h1>
                 <Form.Group className="form-floating mb-3">
                   <Form.Control
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.username}
-                    placeholder={t("signup.usernameConstraints")}
+                    placeholder={t(($) => $.signup.usernameConstraints)}
                     name="username"
                     id="username"
                     autoComplete="username"
@@ -103,7 +107,7 @@ const Registration = () => {
                     required
                     ref={inputRef}
                   />
-                  <Form.Label htmlFor="username">{t("signup.username")}</Form.Label>
+                  <Form.Label htmlFor="username">{t(($) => $.signup.username)}</Form.Label>
                   <Form.Control.Feedback type="invalid" tooltip placement="right">
                     {t(formik.errors.username)}
                   </Form.Control.Feedback>
@@ -114,7 +118,7 @@ const Registration = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.password}
-                    placeholder={t("signup.passMin")}
+                    placeholder={t(($) => $.signup.passMin)}
                     name="password"
                     id="password"
                     aria-describedby="passwordHelpBlock"
@@ -127,7 +131,7 @@ const Registration = () => {
                   <Form.Control.Feedback type="invalid" tooltip>
                     {t(formik.errors.password)}
                   </Form.Control.Feedback>
-                  <Form.Label htmlFor="password">{t("signup.password")}</Form.Label>
+                  <Form.Label htmlFor="password">{t(($) => $.signup.password)}</Form.Label>
                 </Form.Group>
                 <Form.Group className="form-floating mb-4">
                   <Form.Control
@@ -135,7 +139,7 @@ const Registration = () => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.confirmPassword}
-                    placeholder={t("signup.mustMatch")}
+                    placeholder={t(($) => $.signup.mustMatch)}
                     name="confirmPassword"
                     id="confirmPassword"
                     isInvalid={
@@ -147,13 +151,13 @@ const Registration = () => {
                   />
                   <Form.Control.Feedback type="invalid" tooltip>
                     {registrationFailed
-                      ? t("signup.alreadyExists")
+                      ? t(($) => $.signup.alreadyExists)
                       : t(formik.errors.confirmPassword)}
                   </Form.Control.Feedback>
-                  <Form.Label htmlFor="confirmPassword">{t("signup.confirm")}</Form.Label>
+                  <Form.Label htmlFor="confirmPassword">{t(($) => $.signup.confirm)}</Form.Label>
                 </Form.Group>
                 <Button type="submit" variant="outline-primary" className="w-100">
-                  {t("signup.submit")}
+                  {t(($) => $.signup.submit)}
                 </Button>
               </Form>
             </div>

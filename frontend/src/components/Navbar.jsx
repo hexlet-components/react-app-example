@@ -12,9 +12,9 @@ const Navbar = () => {
     <BootstrapNavbar bg="white" expand="lg" className="shadow-sm">
       <div className="container">
         <BootstrapNavbar.Brand as={Link} to="/">
-          {t("Home")}
+          {t(($) => $.Home)}
         </BootstrapNavbar.Brand>
-        {!!user && <Button onClick={logOut}>{t("logout")}</Button>}
+        {!!user && <Button onClick={logOut}>{t(($) => $.logout)}</Button>}
       </div>
     </BootstrapNavbar>
   );

@@ -1,0 +1,38 @@
+{
+  "errors": {
+    "network": "Network Error",
+    "unknown": "Unknown Error"
+  },
+  "Home": "Home",
+  "login": {
+    "authFailed": "username or password is incorrect",
+    "header": "Login",
+    "newToChat": "New to chat?",
+    "password": "Password",
+    "signup": "Sign up",
+    "submit": "Submit",
+    "username": "Username"
+  },
+  "logout": "Log out",
+  "notFound": {
+    "header": "Page not found",
+    "linkText": "to the main page",
+    "message": "You can go "
+  },
+  "private": {
+    "header": "Private page!",
+    "message": "Logged user: {{username}}"
+  },
+  "signup": {
+    "alreadyExists": "Username already taken",
+    "confirm": "Confirm password",
+    "header": "Signup",
+    "mustMatch": "Passwords must match",
+    "passMin": "Min 6 characters",
+    "password": "Password",
+    "required": "Required",
+    "submit": "Submit",
+    "username": "Username",
+    "usernameConstraints": "3 to 20 characters"
+  }
+}

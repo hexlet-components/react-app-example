@@ -7,11 +7,11 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "formik": "^2.2.9",
-    "i18next": "^23.2.8",
+    "i18next": "^26.3.6",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^11.17.4",
+    "react-i18next": "^17.0.11",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "react-toastify": "^9.0.5",
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "i18next-cli": "^1.69.2",
     "oxfmt": "^0.63.0",
     "oxlint": "^1.78.0"
   }
