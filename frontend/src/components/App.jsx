@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate, Outlet } from "react-router-dom";
-import { ToastContainer as Toaster } from "react-toastify";
+import { AppShell, MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
 
 import Navbar from "./Navbar.jsx";
 import Registration from "./Registration.jsx";
@@ -13,6 +14,8 @@ import { AuthContext } from "../contexts/index.js";
 
 import { useAuth } from "../hooks/index.js";
 import routes from "../routes.js";
+
+const headerHeight = 56;
 
 const AuthProvider = ({ children }) => {
   const currentUser = JSON.parse(localStorage.getItem("user"));
@@ -53,22 +56,30 @@ const PrivateOutlet = () => {
 };
 
 const App = () => (
-  <AuthProvider>
-    <Router>
-      <div className="d-flex flex-column h-100">
-        <Navbar />
-        <Routes>
-          <Route path={routes.signupPagePath()} element={<Registration />} />
-          <Route path={routes.loginPagePath()} element={<Login />} />
-          <Route path={routes.chatPagePath()} element={<PrivateOutlet />}>
-            <Route path="" element={<PrivatePage />} />
-          </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
-      <Toaster />
-    </Router>
-  </AuthProvider>
+  <MantineProvider>
+    {/* Правый верхний угол занят шапкой: уведомление там перекрывало бы кнопку
+        выхода и мешало по ней кликнуть. */}
+    <Notifications position="bottom-right" />
+    <AuthProvider>
+      <Router>
+        <AppShell header={{ height: headerHeight }} padding="md">
+          <AppShell.Header>
+            <Navbar />
+          </AppShell.Header>
+          <AppShell.Main>
+            <Routes>
+              <Route path={routes.signupPagePath()} element={<Registration />} />
+              <Route path={routes.loginPagePath()} element={<Login />} />
+              <Route path={routes.chatPagePath()} element={<PrivateOutlet />}>
+                <Route path="" element={<PrivatePage />} />
+              </Route>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </AppShell.Main>
+        </AppShell>
+      </Router>
+    </AuthProvider>
+  </MantineProvider>
 );
 
 export default App;

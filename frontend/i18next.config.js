@@ -12,9 +12,5 @@ export default defineConfig({
     output: "src/locales/{{language}}/{{namespace}}.json",
     defaultNS: "translation",
     primaryLanguage: "ru",
-    // Сообщения валидации это ключи в схеме yup: их подставляет formik, и в
-    // t() попадает переменная. Статически такой ключ не виден, поэтому без
-    // этой строки extract вычистил бы половину раздела signup.
-    preservePatterns: ["signup.*"],
   },
 });
