@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Navbar as BootstrapNavbar } from "react-bootstrap";
+import { Anchor, Button, Container, Group } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -8,15 +8,20 @@ import { useAuth } from "../hooks/index.js";
 const Navbar = () => {
   const { logOut, user } = useAuth();
   const { t } = useTranslation();
+
   return (
-    <BootstrapNavbar bg="white" expand="lg" className="shadow-sm">
-      <div className="container">
-        <BootstrapNavbar.Brand as={Link} to="/">
+    <Container h="100%" size="lg">
+      <Group h="100%" justify="space-between">
+        <Anchor component={Link} to="/" fw={600} underline="never">
           {t(($) => $.Home)}
-        </BootstrapNavbar.Brand>
-        {!!user && <Button onClick={logOut}>{t(($) => $.logout)}</Button>}
-      </div>
-    </BootstrapNavbar>
+        </Anchor>
+        {!!user && (
+          <Button variant="light" onClick={logOut}>
+            {t(($) => $.logout)}
+          </Button>
+        )}
+      </Group>
+    </Container>
   );
 };
 

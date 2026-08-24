@@ -34,5 +34,13 @@ jobs:
 
       - name: Install
         run: make install
+      - name: Build frontend
+        run: make build
       - name: Run linter
         run: make lint
+      # Браузерные тесты это единственная проверка интерфейса в репозитории:
+      # юнит-тестов тут нет.
+      - name: Install browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run tests
+        run: make test
