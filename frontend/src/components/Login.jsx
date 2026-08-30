@@ -37,6 +37,15 @@ const Login = () => {
     inputRef.current.focus();
   }, []);
 
+  // Выделение переезжает в эффект, потому что обращение к ref из обработчика
+  // отправки oxlint считает обращением во время рендера: `form.onSubmit(...)`
+  // вычисляется в рендере, и правило react(refs) прослеживает колбэк до ref.
+  useEffect(() => {
+    if (authFailed) {
+      inputRef.current.select();
+    }
+  }, [authFailed]);
+
   const form = useForm({
     initialValues: {
       username: "",
@@ -61,7 +70,6 @@ const Login = () => {
 
       if (err.response?.status === 401) {
         setAuthFailed(true);
-        inputRef.current.select();
       } else {
         notifications.show({ color: "red", message: t(($) => $.errors.network) });
       }
