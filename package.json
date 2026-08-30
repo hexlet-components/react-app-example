@@ -17,11 +17,11 @@
     "@hexlet/chat-server": "^2.0.4"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
-    "oxfmt": "^0.63.0",
-    "oxlint": "^1.78.0",
-    "playwright": "^1.37.0"
+    "@playwright/test": "^1.62.1",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "playwright": "^1.62.1"
   },
-  "packageManager": "pnpm@11.20.0",
+  "packageManager": "pnpm@11.24.0",
   "private": true
 }
