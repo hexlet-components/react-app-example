@@ -22,6 +22,6 @@
     "oxlint": "^1.80.0",
     "playwright": "^1.62.1"
   },
-  "packageManager": "pnpm@11.24.0",
+  "packageManager": "pnpm@12.6.0",
   "private": true
 }
